@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منفذ نوكه</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="welcome-modal" class="modal active">
+        <div class="modal-content neumorphic">
+            <h2>أهلاً بك أبو روان!</h2>
+            <p>نتمنى لك يوماً مليئاً بالنجاح في منفذ نوكه.</p>
+            <button class="btn neumorphic-btn" onclick="closeWelcome()">الدخول للتطبيق</button>
+        </div>
+    </div>
+
+    <div id="exchange-rate-bar" class="neumorphic-bar">
+        <span id="rate-text">جاري جلب سعر الدولار...</span>
+        <button class="close-btn neumorphic-btn" onclick="closeRateBar()">X</button>
+    </div>
+
+    <header class="neumorphic">
+        <h1>منفذ نوكه</h1>
+    </header>
+
+    <nav class="tabs-nav neumorphic">
+        <button class="tab-btn neumorphic-btn active" onclick="openTab('tab-paper')">الورق</button>
+        <button class="tab-btn neumorphic-btn" onclick="openTab('tab-customers')">الزبائن</button>
+        <button class="tab-btn neumorphic-btn" onclick="openTab('tab-others')">أخرى</button>
+    </nav>
+
+    <section id="tab-paper" class="tab-content active">
+        <div class="card neumorphic">
+            <h3>إضافة دولار لليوم</h3>
+            <div class="input-group">
+                <label>سعر الشراء:</label>
+                <input type="number" id="buy-price" class="neumorphic-input" placeholder="مثال: 150,000">
+            </div>
+            <div class="input-group">
+                <label>سعر البيع:</label>
+                <input type="number" id="sell-price" class="neumorphic-input" placeholder="مثال: 152,000">
+            </div>
+            <button class="btn neumorphic-btn">حفظ وإضافة</button>
+        </div>
+    </section>
+
+    <section id="tab-customers" class="tab-content">
+        <div class="card neumorphic">
+            <button class="btn neumorphic-btn" onclick="toggleAddCustomer()">+ إضافة زبون جديد</button>
+            
+            <div id="add-customer-form" style="display: none; margin-top: 20px;">
+                <input type="text" id="cust-name" class="neumorphic-input" placeholder="اسم الزبون">
+                <input type="tel" id="cust-phone" class="neumorphic-input" placeholder="رقم الهاتف">
+                <input type="text" id="guar-name" class="neumorphic-input" placeholder="اسم الكفيل">
+                <input type="tel" id="guar-phone" class="neumorphic-input" placeholder="رقم الكفيل">
+                <button class="btn neumorphic-btn" style="color: green;">حفظ الزبون</button>
+            </div>
+
+            <div class="customers-list">
+                <div class="customer-item neumorphic" onclick="openCustomerDetails('أحمد محمد')">
+                    <h4>أحمد محمد</h4>
+                    <div class="actions">
+                        <button class="btn neumorphic-btn" style="font-size: 12px;">تعديل</button>
+                        <button class="btn neumorphic-btn" style="color: red; font-size: 12px;">حذف</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tab-others" class="tab-content">
+        <div class="card neumorphic">
+            <h3>قريباً...</h3>
+            <p>هنا يمكننا إضافة الإحصائيات أو الإعدادات الخاصة بالتطبيق.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
