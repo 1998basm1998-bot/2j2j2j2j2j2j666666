@@ -1,0 +1,131 @@
+/* إعدادات عامة */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #e0e5ec; /* لون خلفية النيومورفيزم الكلاسيكي */
+    color: #4a4a4a;
+    padding-bottom: 60px; /* مساحة للشريط السفلي */
+}
+
+/* تنسيقات النيومورفيزم الأساسية */
+.neumorphic {
+    background: #e0e5ec;
+    box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.neumorphic-btn {
+    background: #e0e5ec;
+    box-shadow: 5px 5px 10px rgb(163,177,198,0.6), -5px -5px 10px rgba(255,255,255, 0.5);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.neumorphic-btn:active {
+    box-shadow: inset 5px 5px 10px rgb(163,177,198,0.6), inset -5px -5px 10px rgba(255,255,255, 0.5);
+}
+
+.neumorphic-input {
+    width: 100%;
+    background: #e0e5ec;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8);
+    outline: none;
+    color: #333;
+}
+
+/* تخطيط الصفحة */
+header {
+    text-align: center;
+    margin: 20px;
+}
+
+.tabs-nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 10px;
+}
+
+.tab-btn {
+    flex: 1;
+    margin: 0 5px;
+}
+
+.tab-btn.active {
+    box-shadow: inset 5px 5px 10px rgb(163,177,198,0.6), inset -5px -5px 10px rgba(255,255,255, 0.5);
+    color: #007bff;
+}
+
+.tab-content {
+    display: none; /* إخفاء جميع التبويبات افتراضياً */
+    margin: 20px;
+}
+
+.tab-content.active {
+    display: block; /* إظهار التبويبة النشطة فقط */
+}
+
+/* النافذة المنبثقة (الترحيب) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(224, 229, 236, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal.active {
+    display: flex;
+}
+.modal-content {
+    text-align: center;
+    max-width: 90%;
+}
+.modal-content p {
+    margin: 15px 0;
+}
+
+/* شريط السعر السفلي */
+.neumorphic-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #e0e5ec;
+    box-shadow: 0 -5px 10px rgb(163,177,198,0.4);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.close-btn {
+    padding: 5px 10px;
+    color: red;
+}
+
+/* قائمة الزبائن */
+.customer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding: 15px;
+    cursor: pointer;
+}
